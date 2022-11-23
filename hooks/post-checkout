@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -Eeufo pipefail
+set -Eexufo pipefail
 
 echo --- :git: Testing if commit is an ancestor of the branch
 
