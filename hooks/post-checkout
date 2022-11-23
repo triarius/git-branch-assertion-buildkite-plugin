@@ -4,7 +4,7 @@ set -Eexufo pipefail
 
 echo --- :git: Testing if commit is an ancestor of the branch
 
-git fetch origin '*:*'
+git remote update origin
 
 git show-ref
 
