@@ -1,0 +1,7 @@
+name: Git Branch Assertion
+description: Assert that the checked out commit is an ancestor of the head of the branch
+author: https://github.com/triarius
+requirements:
+  - git
+configuration:
+  additionalProperties: false

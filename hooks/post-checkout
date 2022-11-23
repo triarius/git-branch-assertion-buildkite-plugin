@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -Eeufo pipefail
+
+echo --- :git: Testing if commit is an ancestor of the branch
+
+git merge-base --is-ancestor "$BUILDKITE_COMMIT" "$BUILDKITE_BRANCH"
