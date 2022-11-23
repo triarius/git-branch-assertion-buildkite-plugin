@@ -4,7 +4,7 @@ set -Eeufo pipefail
 
 echo --- :git: Testing if commit is an ancestor of the branch
 
-git fetch origin "refs/heads/$BUILDKITE_BRANCH"
+git fetch origin 'refs/heads/*:refs/heads/*'
 
 git show-ref
 
