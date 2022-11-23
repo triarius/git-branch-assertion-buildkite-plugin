@@ -13,5 +13,5 @@ steps:
   - command: buildkite-agent pipeline upload
     label: ':pipeline:'
     plugins:
-      - triarius/branch-assertion: {}
+      - triarius/git-branch-assertion: {}
 ```
