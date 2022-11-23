@@ -6,11 +6,12 @@ More specifically it checks that the commit is an ancestor of what the branch wa
 
 # Usage
 
-Use the plugin in your steps like this:
+Use the plugin in pipline upload step like this:
 
 ```yaml
 steps:
-  - command: aws sts get-caller-identity
+  - command: buildkite-agent pipeline upload
+    label: ':pipeline:'
     plugins:
       - triarius/branch-assertion: {}
 ```
