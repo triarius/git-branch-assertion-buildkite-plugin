@@ -4,4 +4,6 @@ set -Eeufo pipefail
 
 echo --- :git: Testing if commit is an ancestor of the branch
 
+git show-ref
+
 git merge-base --is-ancestor "$BUILDKITE_COMMIT" "$BUILDKITE_BRANCH"
