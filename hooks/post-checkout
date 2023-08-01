@@ -2,14 +2,16 @@
 
 set -Eeufo pipefail
 
-echo --- :git: Testing if commit "$BUILDKITE_COMMIT" is an ancestor of the "$BUILDKITE_BRANCH" branch
+echo ~~~ :git: Testing if commit "$BUILDKITE_COMMIT" is an ancestor of the "$BUILDKITE_BRANCH" branch
 
 if ! git ls-remote --exit-code --heads origin "$BUILDKITE_BRANCH"; then
+  echo ^^^ +++
   echo ⛔ "$BUILDKITE_BRANCH" is not a branch in this git remote
   exit 1
 fi
 
 if ! git merge-base --is-ancestor "$BUILDKITE_COMMIT" "refs/remotes/origin/$BUILDKITE_BRANCH"; then
+  echo ^^^ +++
   echo ⛔ The commit "$BUILDKITE_COMMIT" is not an ancestor of "$BUILDKITE_BRANCH"
   exit 1
 fi
